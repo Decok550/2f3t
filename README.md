@@ -1,2 +1,2 @@
 # DUPLA
-## André Sampaio - 06 --- Matheus Ponzio - 27
+## André Sampaio - 06  ---  Matheus Ponzio - 27
