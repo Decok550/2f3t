@@ -4,16 +4,57 @@ sub = (a,b) => a - b;
 mult = (a,b) => a * b;
 div = (a,b) => a / b;
 raiz = X => Math.sqrt(X);
+
+
 let a = "";
 let b = "";
 let valor = "";
 let temPonto = false
+let desligada = true;
+
+function porcentagem(){
+  if(executa == "mult"){
+    b = valor;
+    escrever_display(div(mult(a,b),100));
+    b = "";
+    valor = "";
+
+  }
+}
+
+function raiz_quadrada(){
+     escrever_display(raiz(valor));
+     valor = "";
+}
+
+function onoff(){
+   if(desligada){
+       zerar();
+       desligada = false;
+   }else{
+      zerar();
+      escrever_display("");
+      desligada = true;
+   }
+
+}
+
+function zerar(){
+  if(desligada)  return;
+  a = "";
+  b = "";
+  valor = "";
+  temPonto = "";
+  escrever_display(0);
+
+}
 
 function escrever_display(num){
   document.getElementById("resultado").value = num;
 
 }
 function digitando(tecla){
+     if(desligada) return;
      if( tecla == "."){
        if(!temPonto){
          temPonto = true;
@@ -28,12 +69,14 @@ escrever_display(valor);
 }
 let executa = "";
 function operacao(op){
+  if(desligada) return
   executa = op;
   a = valor;
   valor = "";
   temPonto = false; 
 }
 function calcula(){
+  if(desligada) return;
   if(executa != "")
   b=valor;
   if(executa == "mult") escrever_display(mult(a,b));
