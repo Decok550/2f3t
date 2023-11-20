@@ -34,3 +34,14 @@ button {
     border: none;
     border-bottom: 2px solid #fff ;
 }
+.pa {
+    width: 100%;
+    background-color: grey;
+    padding: 20px;
+    color: black;
+}
+.calculaPA inpu {
+   width: 48px;
+   border: none;
+   border: 1px solid #000;
+}
